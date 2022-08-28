@@ -27,7 +27,12 @@
   },
   "author": "wangguangyou",
   "license": "MIT",
-  "repository": "wangguangyou/postcss-px-to-clamp",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wangguangyou/postcss-px-to-clamp.git"
+  },
+  "bugs": "https://github.com/wangguangyou/postcss-px-to-clamp/issues",
+  "homepage": "https://github.com/wangguangyou/postcss-px-to-clamp",
   "engines": {
     "node": ">=12.0.0"
   },

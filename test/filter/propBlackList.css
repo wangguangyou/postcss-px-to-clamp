@@ -1,0 +1,24 @@
+.a {
+  width:13.33333vw;
+}
+
+.ignore {
+  width:13.33333vw;
+  border:2px;
+}
+
+.s {
+  width:13.33333vw;
+  font-size:20px;
+  height:calc(13.33333vw - 2rem);
+  border:100px;
+}
+
+.e {
+  width:13.33333vw;
+  border:1px;
+}
+
+.c {
+  width:100vw;
+}

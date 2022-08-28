@@ -1,0 +1,47 @@
+.a {
+  top:0px;
+  width: 20vw;
+  height: 20vh;
+  line-height: 1.2;
+  padding: 20px;
+  padding-top: 20px;
+  border: 1px solid #000;
+  font-size: 20em;
+  margin-top: '20px';
+  margin-left: "20px";
+  margin-bottom: 20PX;
+  background:url('aaa20px.png')
+}
+.b {
+  border: -1px solid black;
+  width:200px;
+  margin-bottom: calc(100px - 10vw);
+  font-size: calc(10vmin);
+  line-height: 1;
+}
+@media (min-width: 750px) {
+  .c {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.d-ignore::before {
+  content: '';
+  width: 10px;
+  padding: 3.125vw;
+  height: 10px;
+  border: solid 2px #000;
+}
+
+@keyframes f {
+  0% {
+    transform: translate(0px, 0);
+  }
+  50% {
+    transform: translate(10px, -10px);
+  }
+  100% {
+    transform: translate(10px, -10px); /* px-to-clamp-ignore */
+  }
+}

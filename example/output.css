@@ -1,0 +1,58 @@
+.a {
+  width: 20vw;
+  height: 20vh;
+  line-height: 1.2;
+  padding: 20px;
+  padding-top: 20px;
+  border: 1px solid #000;
+  font-size: 20em;
+  margin-top: '20px';
+  margin-left: "20px";
+  margin-bottom: 20PX;
+  background:url('aaa20px.png')
+}
+.b {
+  border: -1px solid black;
+  width:calc(0.26667 * clamp(200px, 100vw, 1200px));
+  margin-bottom: calc(calc(0.13333 * clamp(200px, 100vw, 1200px)) - 10vw);
+  font-size: calc(10vmin);
+  line-height: 1;
+}
+@media (min-width: 750px) {
+  .c {
+    font-size: calc(0.02133 * clamp(200px, 100vw, 1200px));
+    line-height: calc(0.02933 * clamp(200px, 100vw, 1200px));
+  }
+}
+
+.d-ignore::before {
+  content: '';
+  width: calc(0.01333 * clamp(200px, 100vw, 1200px));
+  padding: 3.125vw;
+  height: calc(0.01333 * clamp(200px, 100vw, 1200px));
+  border: solid calc(0.00267 * clamp(200px, 100vw, 1200px)) #000;
+}
+.e-bad-ignore {
+  width: calc(0.01333 * clamp(200px, 100vw, 1200px));
+  height: 3.125vw;
+  width:30px;
+  width:20px;
+
+}
+
+/* selector ignore */
+.f {
+  width: 10px;
+}
+
+@keyframes g {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(calc(0.01333 * clamp(200px, 100vw, 1200px)), calc(-0.01333 * clamp(200px, 100vw, 1200px)));
+  }
+  100% {
+    transform: translate(10px, -10px);
+  }
+}

@@ -1,0 +1,11 @@
+@keyframes f {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(calc(0.01333 * clamp(200px, 100vw, 1200px)), calc(-0.01333 * clamp(200px, 100vw, 1200px)));
+  }
+  100% {
+    transform: translate(calc(0.01333 * clamp(200px, 100vw, 1200px)), calc(-0.01333 * clamp(200px, 100vw, 1200px)));
+  }
+}

@@ -1,0 +1,8 @@
+.comment {
+  border:0;
+  width: 10px;
+  height: 3.125vw;
+  /* px-to-clamp-ignore-next */
+  margin:30px;
+  padding:20px;/* px-to-clamp-ignore */
+}

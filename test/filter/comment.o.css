@@ -1,0 +1,7 @@
+.comment {
+  border:0;
+  width: calc(0.01333 * clamp(200px, 100vw, 1200px));
+  height: 3.125vw;
+  margin:30px;
+  padding:20px;
+}

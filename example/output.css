@@ -2,8 +2,8 @@
   width: 20vw;
   height: 20vh;
   line-height: 1.2;
-  padding: 20px;
-  padding-top: 20px;
+  padding: calc(0.02667 * clamp(200px, 100vw, 1200px));
+  padding-top: calc(0.02667 * clamp(200px, 100vw, 1200px));
   border: 1px solid #000;
   font-size: 20em;
   margin-top: '20px';

@@ -8,7 +8,7 @@ var plugin = require('../dist')
 const options = {
   minViewportWidth: '200px',
   maxViewportWidth: '1200px',
-  propBlackList: ['padding'],
+  propBlackList: [],
   selectorBlackList: ['.f'],
   replace: true,
   keyframesQuery: true,

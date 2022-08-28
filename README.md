@@ -1,45 +1,99 @@
 # postcss-px-to-clamp
 
-[PostCSS] plugin that converts px to clamp (clamp(min, val, max)).
+[PostCSS] plugin that converts px to clamp (clamp(min, val, max) or min(val, max) or max(val, min)).
 
 [PostCSS]: https://github.com/postcss/postcss
 
 ```css
 .foo {
-  /* Input example */
+  width: 20vw;
+  height: 20vh;
+  line-height: 1.2;
+  padding: 20px;
+  padding-top: 20px;/* px-to-viewport-ignore */
+  /* px-to-viewport-ignore-next */
+  padding-left: 20px;
+  border: 1px solid #000;
+  font-size: 20em;
+  margin-top: '20px';
+  margin-left: "20px";
+  margin-bottom: 20PX;
 }
 ```
 
 ```css
 .foo {
-  /* Output example */
+  width: 20vw;
+  height: 20vh;
+  line-height: 1.2;
+  padding: calc(0.02667 * clamp(200px, 100vw, 1200px));
+  padding-top: 20px;
+  padding-left: 20px;
+  border: 1px solid #000;
+  font-size: 20em;
+  margin-top: '20px';
+  margin-left: "20px";
+  margin-bottom: 20PX;
 }
 ```
 
-## Usage
+If your project involves a fixed width, this script will help to convert pixels into viewport units.
 
-**Step 1:** Install plugin:
+### Installation
 
 ```sh
-npm install --save-dev postcss postcss-px-to-clamp
+npm install --save-dev postcss-px-to-clamp
 ```
 
-**Step 2:** Check you project for existed PostCSS config: `postcss.config.js`
-in the project root, `"postcss"` section in `package.json`
-or `postcss` in bundle config.
+### Usage
 
-If you do not use PostCSS, add it according to [official docs]
-and set this plugin in settings.
+Default Options:
 
-**Step 3:** Add the plugin to plugins list:
-
-```diff
-module.exports = {
-  plugins: [
-+   require('postcss-px-to-clamp'),
-    require('autoprefixer')
-  ]
+```ts
+interface DefaultOptions {
+  viewportWidth: number
+  maxViewportWidth?: string
+  minViewportWidth?: string
+  unitPrecision: number
+  selectorBlackList: (string | RegExp)[]
+  propBlackList: (string | RegExp)[]
+  minPixelValue: number
+  mediaQuery: boolean
+  keyframesQuery: boolean
+  replace: boolean
+  include?: RegExp | RegExp[]
+  exclude?: RegExp | RegExp[]
 }
 ```
 
-[official docs]: https://github.com/postcss/postcss#usage
+```js
+{
+  viewportWidth: 750,
+  unitPrecision: 5,
+  selectorBlackList: [],
+  propBlackList: [],
+  minPixelValue: 1,
+  mediaQuery: false,
+  keyframesQuery: false,
+  replace: true,
+  exclude: undefined,
+  include: undefined,
+}
+```
+
+- `viewportWidth` The width of the viewport.
+  - Px will be converted to vw. 
+- `minViewportWidth` The minimum width of the viewport.
+  - Px will be converted to calc(val / viewportWidth * max(100w, minViewportWidth)). 
+- `maxViewportWidth` The maximum width of the viewport.
+  - Px will be converted to calc(val / viewportWidth * min(100w, maxViewportWidth)). 
+  - If minViewportWidth and maxViewportWidth are both set px will be converted to calc(val / viewportWidth * clamp(minViewportWidth, 100w, maxViewportWidth)).
+- `unitPrecision` The decimal numbers to allow the vw units to grow to.
+- `selectorBlackList` Exclude selectors.
+- `propBlackList` Exclude css properties.
+- `minPixelValue` Will not be converted if x is less than or equal to minPixelValue.
+- `mediaQuery` Allow px to be converted in media queries.
+- `keyframesQuery` Allow px to be converted in keyframes queries.
+- `replace` Append css for fallback or replace css.
+- `exclude` Exclude some folder'.
+- `include` Only included folder will be converted.

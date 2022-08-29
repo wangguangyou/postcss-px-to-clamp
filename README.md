@@ -10,8 +10,8 @@
   height: 20vh;
   line-height: 1.2;
   padding: 20px;
-  padding-top: 20px;/* px-to-viewport-ignore */
-  /* px-to-viewport-ignore-next */
+  padding-top: 20px;/* px-to-clamp-ignore */
+  /* px-to-clamp-ignore-next */
   padding-left: 20px;
   border: 1px solid #000;
   font-size: 20em;
@@ -82,11 +82,11 @@ interface DefaultOptions {
 ```
 
 - `viewportWidth` The width of the viewport.
-  - Px will be converted to vw. 
+  - Px will be converted to vw.
 - `minViewportWidth` The minimum width of the viewport.
-  - Px will be converted to calc(val / viewportWidth * max(100w, minViewportWidth)). 
+  - Px will be converted to calc(val / viewportWidth * max(100w, minViewportWidth)).
 - `maxViewportWidth` The maximum width of the viewport.
-  - Px will be converted to calc(val / viewportWidth * min(100w, maxViewportWidth)). 
+  - Px will be converted to calc(val / viewportWidth * min(100w, maxViewportWidth)).
   - If minViewportWidth and maxViewportWidth are both set px will be converted to calc(val / viewportWidth * clamp(minViewportWidth, 100w, maxViewportWidth)).
 - `unitPrecision` The decimal numbers to allow the vw units to grow to.
 - `selectorBlackList` Exclude selectors.

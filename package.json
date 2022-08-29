@@ -1,6 +1,6 @@
 {
   "name": "postcss-px-to-clamp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "PostCSS plugin that converts px to clamp (clamp(min, val, max))",
   "main": "./dist/index.js",
   "keywords": [

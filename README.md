@@ -54,6 +54,8 @@ interface DefaultOptions {
   viewportWidth: number
   maxViewportWidth?: string
   minViewportWidth?: string
+  viewportUnit: 'vw' | 'vmin'
+  fontViewportUnit: 'vw' | 'vmin'
   unitPrecision: number
   selectorBlackList: (string | RegExp)[]
   propBlackList: (string | RegExp)[]
@@ -69,6 +71,8 @@ interface DefaultOptions {
 ```js
 {
   viewportWidth: 750,
+  viewportUnit: 'vw',
+  fontViewportUnit: 'vw',
   unitPrecision: 5,
   selectorBlackList: [],
   propBlackList: [],
@@ -83,6 +87,8 @@ interface DefaultOptions {
 
 - `viewportWidth` The width of the viewport.
   - Px will be converted to vw.
+- `viewportUnit` Unit used for calculation clamp(min, 100vw|100vmin, max).
+- `fontViewportUnit` Font properties used viewportUnit.
 - `minViewportWidth` The minimum width of the viewport.
   - Px will be converted to calc(val / viewportWidth * max(100w, minViewportWidth)).
 - `maxViewportWidth` The maximum width of the viewport.

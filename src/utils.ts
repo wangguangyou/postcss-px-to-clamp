@@ -9,6 +9,7 @@ export const toFixed = (num: number, precision: number): string => {
 
 export const getTransformValue = (
   string: string,
+  prop: string,
   options: DefaultOptions
 ): string => {
   const {
@@ -17,30 +18,32 @@ export const getTransformValue = (
     viewportWidth,
     unitPrecision,
     minPixelValue,
+    viewportUnit,
+    fontViewportUnit,
   } = options
-
+  const unit = ~prop.indexOf('font') ? fontViewportUnit : viewportUnit
   if (Math.abs(parseInt(string)) === 0) return string
   if (Math.abs(parseInt(string)) <= minPixelValue) return string
   const value = parseInt(string) / viewportWidth
-  let result = `${toFixed(value * 100, unitPrecision)}vw`
+  let result = `${toFixed(value * 100, unitPrecision)}${unit}`
 
   if (maxViewportWidth) {
     result = `calc(${toFixed(
       value,
       unitPrecision
-    )} * min(100vw, ${maxViewportWidth}))`
+    )} * min(100${unit}, ${maxViewportWidth}))`
   }
   if (minViewportWidth) {
     result = `calc(${toFixed(
       value,
       unitPrecision
-    )} * max(100vw, ${minViewportWidth}))`
+    )} * max(100${unit}, ${minViewportWidth}))`
   }
   if (maxViewportWidth && minViewportWidth) {
     result = `calc(${toFixed(
       value,
       unitPrecision
-    )} * clamp(${minViewportWidth}, 100vw, ${maxViewportWidth}))`
+    )} * clamp(${minViewportWidth}, 100${unit}, ${maxViewportWidth}))`
   }
 
   return result

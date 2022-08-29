@@ -54,7 +54,7 @@ const pxToClamp = (opts: Partial<DefaultOptions> = {}) => {
           if (/^url\(|'|"/.test(decl.value)) return
 
           const value = decl.value.replace(unitReg, (string) =>
-            getTransformValue(string, options)
+            getTransformValue(string, decl.prop, options)
           )
           if (replace) {
             decl.value = value

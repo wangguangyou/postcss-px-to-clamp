@@ -2,6 +2,8 @@ export interface DefaultOptions {
   viewportWidth: number
   maxViewportWidth?: string
   minViewportWidth?: string
+  viewportUnit: 'vw' | 'vmin'
+  fontViewportUnit: 'vw' | 'vmin'
   unitPrecision: number
   selectorBlackList: (string | RegExp)[]
   propBlackList: (string | RegExp)[]

@@ -3,9 +3,9 @@
 [English](README.md) | 中文
 
 
-基于 [PostCSS]8 转换px为vw，支持通过设置最大、最小视图边界[minViewportWidth, maxViewportWidth]超过边界则按边界大小计算
+基于 [PostCSS8] 转换px为vw，支持通过设置最大、最小视图边界[minViewportWidth, maxViewportWidth]超过边界则按边界大小计算
 
-PostCSS https://github.com/postcss/postcss 
+[PostCSS8]: https://github.com/postcss/postcss
 
 ```css
 .foo {

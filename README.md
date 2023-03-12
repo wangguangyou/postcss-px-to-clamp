@@ -1,5 +1,7 @@
 # postcss-px-to-clamp
 
+English | [中文](README_CN.md)
+
 [PostCSS] plugin that converts px to clamp (clamp(min, val, max) or min(val, max) or max(val, min)).
 
 [PostCSS]: https://github.com/postcss/postcss

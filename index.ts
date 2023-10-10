@@ -14,7 +14,10 @@ const CURRENTIGNORE = 'px-to-clamp-ignore'
 const NEXTIGNORE = 'px-to-clamp-ignore-next'
 
 const UNITTOCONVERT = 'px'
-const unitReg = new RegExp(`-?\\d+${UNITTOCONVERT}`, 'g')
+const unitReg = new RegExp(
+  `"[^"]+"|'[^']+'|url\\([^)]+\\)|((?<=^|[^\\w-])-?\\d*\\.?\\d+)${UNITTOCONVERT}\\b`,
+  'g'
+)
 
 const pxToClamp = (opts: Partial<DefaultOptions> = {}) => {
   const options: DefaultOptions = Object.assign({}, defaultOptions, opts)

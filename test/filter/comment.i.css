@@ -1,7 +1,12 @@
 .comment {
   border:0;
-  width: 10px;
+  width: 10.5px;
   height: 3.125vw;
+  background: url(img12px.png);
+  background: url('img12px.png');
+  background: url("img12px.png");
+  font-size: var(--text12px);
+  top: -10.5px;
   /* px-to-clamp-ignore-next */
   margin:30px;
   padding:20px;/* px-to-clamp-ignore */

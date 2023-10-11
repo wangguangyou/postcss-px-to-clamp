@@ -131,4 +131,12 @@ describe('other', () => {
   it('default', async () => {
     await run(resolve('./default.i.css'), resolve('./default.o.css'))
   })
+  it('var', async () => {
+    await run(resolve('./var.i.css'), resolve('./var.o.css'), {
+      mediaQuery: true,
+    })
+  })
+  it('url', async () => {
+    await run(resolve('./url.i.css'), resolve('./url.o.css'), {})
+  })
 })

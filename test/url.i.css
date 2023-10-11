@@ -1,0 +1,25 @@
+.a {
+  background-image: url("2px.gif");
+  list-style-image: url('../images/1.2px.jpg');
+  content: url("1.2px.jpg");
+  cursor: url(1.2px.cur);
+  border-image-source: url(/media/1-1.px.png);
+  src: url('1-1.px.woff');
+  offset-path: url(#2px);
+  mask-image: url("masks.svg#2px");
+
+  cursor: url(2px.cur), pointer;
+
+  background: url('2px.gif') bottom right repeat-x blue;
+  border-image: url("/media/2px.png");
+
+  background-image: cross-fade(20% url(2px.png), url(2px.png));
+  mask-image: image(url(2px.png), skyblue, linear-gradient(rgba(0, 0, 0, 1.0), transparent));
+
+  content: url(2px.svg) url(2px.svg) url(2px.svg) url(2px.svg) url(2px.svg);
+
+  @document url("https://www.2px.com/") { /* … */ }
+
+  @import url("https://www.2px.com/style.css");
+  @namespace url(http://www.w3.2px/1999/xhtml);
+}

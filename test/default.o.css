@@ -6,10 +6,13 @@
   padding-top: '20px';
   border: 1px solid #000;
   font-size: 20em;
+  border-radius: 2.66667vw !important;
+  transform: translate(1.4vw, 0);
 }
 .b {
   border: -1px solid black;
   width:26.66667vw;
+  height:200px;
   margin-bottom: calc(13.33333vw - 10vw);
   font-size: calc(10vmin);
 }
@@ -22,9 +25,9 @@
 
 @keyframes f {
   0% {
-    transform: translate(0px, 0);
+    transform: translate(10.5px, 0);
   }
   100% {
-    transform: translate(10px, -10px);
+    transform: translate(10.5px, -10.5px);
   }
 }

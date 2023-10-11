@@ -1,0 +1,14 @@
+:root{
+  --10d5px:-10.5px;
+  --5px:10.5px;
+}
+@media (max-width:800px){
+  :root{
+    --10d5px: -10px;
+    --5px: 10px;
+  }
+}
+h1,h2{
+  font-size:var(--10d5px);
+  line-height:var(--5px);
+}

@@ -22,7 +22,7 @@ export const getTransformValue = (
     fontViewportUnit,
   } = options
   const unit = ~prop.indexOf('font') ? fontViewportUnit : viewportUnit
-  if (Math.abs(parseFloat(string)) === 0) return string
+  if (!parseFloat(string)) return string
   if (Math.abs(parseFloat(string)) <= minPixelValue) return string
   const value = parseFloat(string) / viewportWidth
   let result = `${toFixed(value * 100, unitPrecision)}${unit}`

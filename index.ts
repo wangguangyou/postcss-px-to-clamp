@@ -27,7 +27,8 @@ const pxToClamp = (opts: Partial<DefaultOptions> = {}) => {
     postcssPlugin: 'postcss-px-to-clamp',
 
     Once(root: Root): void {
-      if (!validateFile(options, root.source?.input.file)) return
+      if (!validateFile(options, root.source?.input.file?.replace(/\\/g, '/')))
+        return
 
       root.walkRules((rule: Rule) => {
         if (!validateSelector(options, rule.selectors)) return
